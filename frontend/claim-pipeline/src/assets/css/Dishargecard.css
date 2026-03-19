@@ -1,0 +1,304 @@
+/* ══════════════════════════════
+   DISCHARGE CARD
+══════════════════════════════ */
+
+.dc-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  animation: fadeSlideIn 0.25s ease both;
+  /* Purple left accent matching the "discharge summary" identity */
+  border-left: 3px solid var(--accent-purple);
+}
+
+/* ── Header ── */
+.dc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: var(--bg-panel);
+  border-bottom: 1px solid var(--border);
+  gap: 12px;
+}
+
+.dc-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.dc-header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* Purple tag badge */
+.dc-tag {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 3px;
+  background: var(--tag-purple-bg);
+  color: var(--tag-purple-text);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.dc-header-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.dc-hospital-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Icon wrappers */
+.dc-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.dc-icon.purple { color: var(--accent-purple); }
+.dc-icon.teal   { color: var(--accent-teal); }
+
+/* Stay chip */
+.dc-stay-chip {
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+  background: var(--tag-purple-bg);
+  border: 1px solid rgba(139, 107, 205, 0.25);
+  border-radius: var(--radius-sm);
+  padding: 3px 10px;
+}
+.dc-stay-num {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--tag-purple-text);
+}
+.dc-stay-label {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+/* Collapse button */
+.dc-collapse-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.dc-collapse-btn:hover {
+  border-color: var(--border-light);
+  color: var(--text-secondary);
+  background: var(--bg-card);
+}
+
+/* ── Body ── */
+.dc-body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Diagnosis Banner ── */
+.dc-diagnosis-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px 12px 16px;
+  background: linear-gradient(
+    90deg,
+    rgba(139, 107, 205, 0.08) 0%,
+    transparent 100%
+  );
+  border-bottom: 1px solid var(--border);
+}
+
+.dc-diag-icon {
+  color: var(--accent-purple);
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.dc-diag-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.dc-diag-label {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-weight: 600;
+}
+
+.dc-diag-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+/* ── Info Grid ── */
+.dc-info-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+.dc-info-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.1s;
+}
+.dc-info-row:hover { background: var(--bg-card-hover); }
+.dc-info-row:last-child { border-bottom: none; }
+
+.dc-info-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+.dc-info-icon-wrap.purple {
+  background: var(--tag-purple-bg);
+  color: var(--tag-purple-text);
+}
+.dc-info-icon-wrap.teal {
+  background: rgba(43, 181, 181, 0.1);
+  color: var(--accent-teal);
+}
+
+.dc-info-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.dc-info-label {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.dc-info-value {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+.dc-info-value.mono {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+/* Arrow between dates */
+.dc-date-arrow {
+  color: var(--text-dim);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* ── Timeline Bar ── */
+.dc-timeline-bar {
+  padding: 10px 16px 12px;
+  background: var(--bg-base);
+  border-top: 1px solid var(--border);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dc-tl-dot {
+  position: absolute;
+  top: 19px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 2px solid;
+}
+.dc-tl-dot.admit {
+  left: 16px;
+  border-color: var(--accent-teal);
+  background: rgba(43, 181, 181, 0.2);
+}
+.dc-tl-dot.discharge {
+  right: 16px;
+  border-color: var(--accent-purple);
+  background: rgba(139, 107, 205, 0.2);
+}
+
+.dc-tl-line {
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--accent-teal) 0%,
+    rgba(139, 107, 205, 0.3) 50%,
+    var(--accent-purple) 100%
+  );
+  margin: 14px 28px 2px;
+  border-radius: 2px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dc-tl-mid-label {
+  position: absolute;
+  top: -9px;
+  background: var(--bg-base);
+  padding: 0 6px;
+  font-size: 10px;
+  font-weight: 600;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.dc-tl-dates {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-dim);
+  padding: 0 2px;
+}

@@ -1,0 +1,279 @@
+/* ══════════════════════════════
+   PATIENT CARD
+══════════════════════════════ */
+
+.pc-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  animation: fadeSlideIn 0.25s ease both;
+  /* Blue left accent — pairs with DischargeCard's purple */
+  border-left: 3px solid var(--accent-blue);
+}
+
+/* ── Header ── */
+.pc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: var(--bg-panel);
+  border-bottom: 1px solid var(--border);
+  gap: 12px;
+}
+
+.pc-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.pc-header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* Blue tag badge */
+.pc-tag {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 3px;
+  background: var(--tag-blue-bg);
+  color: var(--tag-blue-text);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Avatar circle */
+.pc-name-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.pc-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--tag-blue-bg);
+  border: 1.5px solid rgba(61, 139, 205, 0.35);
+  color: var(--tag-blue-text);
+  font-size: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: 0.5px;
+}
+
+.pc-patient-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: 0.3px;
+}
+
+/* Age chip */
+.pc-age-chip {
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+  background: var(--tag-blue-bg);
+  border: 1px solid rgba(61, 139, 205, 0.25);
+  border-radius: var(--radius-sm);
+  padding: 3px 10px;
+}
+.pc-age-num {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--tag-blue-text);
+}
+.pc-age-label {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+/* Collapse button */
+.pc-collapse-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.pc-collapse-btn:hover {
+  border-color: var(--border-light);
+  color: var(--text-secondary);
+  background: var(--bg-card);
+}
+
+/* ── Body ── */
+.pc-body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Hero strip ── */
+.pc-hero-strip {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px 12px 16px;
+  background: linear-gradient(
+    90deg,
+    rgba(61, 139, 205, 0.08) 0%,
+    transparent 100%
+  );
+  border-bottom: 1px solid var(--border);
+}
+
+.pc-hero-icon {
+  color: var(--accent-blue);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.pc-hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+  min-width: 0;
+}
+
+.pc-hero-label {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-weight: 600;
+}
+
+.pc-hero-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Verified badge */
+.pc-verified-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--accent-green);
+  background: var(--tag-green-bg);
+  border: 1px solid rgba(46, 184, 122, 0.2);
+  border-radius: var(--radius-sm);
+  padding: 3px 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── Field rows ── */
+.pc-fields {
+  display: flex;
+  flex-direction: column;
+}
+
+.pc-field-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.1s;
+}
+.pc-field-row:last-child { border-bottom: none; }
+.pc-field-row:hover { background: var(--bg-card-hover); }
+
+/* Icon box */
+.pc-field-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+.pc-field-icon.blue {
+  background: var(--tag-blue-bg);
+  color: var(--tag-blue-text);
+}
+.pc-field-icon.teal {
+  background: rgba(43, 181, 181, 0.1);
+  color: var(--accent-teal);
+}
+.pc-field-icon.green {
+  background: var(--tag-green-bg);
+  color: var(--tag-green-text);
+}
+
+.pc-field-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.pc-field-label {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.pc-field-value-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pc-field-value {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+.pc-field-value.mono {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.pc-field-suffix {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--accent-blue);
+  background: var(--tag-blue-bg);
+  border-radius: 20px;
+  padding: 1px 8px;
+  border: 1px solid rgba(61, 139, 205, 0.2);
+}
