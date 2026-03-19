@@ -187,7 +187,7 @@ http://localhost:5173
 
 ---
 
-## ☁️ AWS S3 Integration
+##  AWS S3 Integration
 
 * Files uploaded using **boto3**
 * Stored in:
