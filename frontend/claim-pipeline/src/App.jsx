@@ -200,45 +200,7 @@ export default function App() {
           </div>
         </div>
 
-        {/* Center — amounts */}
-        {/* <div className="header-center">
-          {result && (
-            <>
-              <div className="amount-pair">
-                <span className="amount-label">Total Sum:</span>
-                <span className="amount-val green">₹{totalAmount}</span>
-              </div>
-              <button className="icon-ghost">{Icon.edit}</button>
-              <div className="amount-pair">
-                <span className="amount-label">Claimed Amount:</span>
-                <span className="amount-val">₹{totalAmount}</span>
-              </div>
-              <div className="amount-pair">
-                <span className="amount-label">Difference:</span>
-                <span className="amount-val muted">₹0.00</span>
-              </div>
-            </>
-          )}
-        </div> */}
-
-        {/* Right — stat badges + actions */}
-        {/* <div className="header-right">
-          <div className="stat-badge">
-            <span className="stat-num">{result ? "100%" : "—"}</span>
-            <span className="stat-lbl">Bills</span>
-          </div>
-          <div className="stat-badge">
-            <span className="stat-num">{result ? "100%" : "—"}</span>
-            <span className="stat-lbl">Amount</span>
-          </div>
-          <div className="stat-badge accent">
-            <span className="stat-num">{result ? "OK" : "—"}</span>
-            <span className="stat-lbl">Status</span>
-          </div>
-          <div className="h-divider" />
-          <button className="action-btn approve" title="Approve">{Icon.thumb_up}</button>
-          <button className="action-btn reject"  title="Reject">{Icon.thumb_down}</button>
-        </div> */}
+        
       </header>
 
       {/* ════════════════════════════
@@ -260,28 +222,7 @@ export default function App() {
           ))}
         </div>
 
-        {/* <div className="tabbar-right">
-          <span className="timer-label">Claim pending since</span>
-          <div className="time-chip">
-            <span className="t-num">{pendingMins}</span>
-            <span className="t-unit">Mins</span>
-          </div>
-          <div className="time-chip">
-            <span className="t-num">00</span>
-            <span className="t-unit">Secs</span>
-          </div>
-          <div className="timer-sep" />
-          <span className="timer-label">Time spent on claim</span>
-          <div className="time-chip">
-            <span className="t-num">{elapsed.mins}</span>
-            <span className="t-unit">Mins</span>
-          </div>
-          <div className="time-chip">
-            <span className="t-num">{String(elapsed.secs).padStart(2,"0")}</span>
-            <span className="t-unit">Secs</span>
-          </div>
-          <button className="icon-ghost timer-icon">{Icon.timer}</button>
-        </div> */}
+        
       </nav>
 
       {/* ════════════════════════════
@@ -418,7 +359,6 @@ export default function App() {
           )}
 
           {/* ── CLASSIFIED PAGES TAB ── */}
-          {/* ✅ Fixed: removed duplicate old block, now only SupportingDocs */}
           {result && activeTab === "Classified Pages" && (
             <div className="tab-content">
               <SupportingDocs classified={classified} />
